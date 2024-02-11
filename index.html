@@ -1,0 +1,95 @@
+<html> 
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <button id="header_home_button">Home</button>
+        <button id="header_flashcards_button">Flashcards</button>
+        <button id="header_logo_button">LOGO</button>
+        <button id="header_settings_button">Settings</button>
+    </header>
+    <div id="vertical_spacing"></div>
+    <main>
+        <div id="home">
+            <h1>Home</h1>
+            <div>
+                <div id="last_practiced">
+                    <h2>Last Practiced</h2>
+                    <button>Last Praticed</button>
+                </div>
+                <div id="levelling_display">
+                    <h2>Level: TODO</h2>
+                    <button>Level</button>
+                </div>
+            </div>
+            <div id="modes">
+                <h2>Modes</h2>
+                <div id="modes_container">
+                    <div></div>
+                    <button id="flashcards_button_home">Flashcards</button>
+                    <button id="mcq_button_home">Multiple Choice (TODO)</button>
+                    <button id="mcq_button_home">Graphing (TODO)</button>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div id="flashcards">
+            <div id="flashcards_landing">
+                <h1>Flashcards</h1>
+                <div id="flashcards_topics_selecter" class="topics_selector">
+                    <h2>Select Topics</h2>
+                    <div class="topics_selector_container">
+                        <div></div>
+                        <button class="select_reflections">Reflections</button>
+                        <button class="select_rotations">Rotations</button>
+                        <button class="select_translations">Translations</button>
+                        <button class="select_congruency">Congruency</button>
+                        <div></div>
+                    </div>
+                </div>
+                <button class="select_all_topics">Select All</button>
+                <div class="start_controls">
+                    <div></div>
+                    <div> 
+                        <h2>Number of Questions:</h2>
+                        <input value="100" type="number" id="number_input" min="0" max="100">
+                    </div>
+                    <button id="flashcards_start" class="start_button">Start!</button>
+                    <div></div>
+                </div>
+            </div>
+            <div id="flashcards_content">
+                <div id="flashcards_main">
+                    <button>&lt</button>
+                    <div id="flashcard_front">
+                        <p></p>
+                    </div>
+                    <div id="flashcard_back">
+                        <p></p>
+                    </div>
+                    <button>&gt</button>
+                </div>
+                <div id="flashcard_controls">
+                    <button id="flip">Flip</button>
+                    <button id="mark_unknown">Mark as Unknown</button>
+                </div>
+            </div>
+            <div id="flashcards_complete" class="mode_finished">
+                <p>flashcards finished</p>
+            </div>
+        </div>
+        <div id="settings">
+            <p>example settings content</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>footer</p>
+    </footer>
+</body>
+</html>
