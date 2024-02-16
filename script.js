@@ -1,5 +1,4 @@
 //TODO: make all variables camelcase!!
-
 $(document).ready(function(){
 
     //----------NAVIGATION----------
