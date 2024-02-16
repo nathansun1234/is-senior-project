@@ -8,10 +8,14 @@
 
 <body>
     <header>
-        <button id="header_home_button">Home</button>
-        <button id="header_flashcards_button">Flashcards</button>
+        <div id="left-buttons">
+            <button id="header_home_button">Home</button>
+            <button id="header_flashcards_button">Flashcards</button>
+        </div>
         <button id="header_logo_button">LOGO</button>
-        <button id="header_settings_button">Settings</button>
+        <div id="right-button">
+            <button id="header_settings_button">Settings</button>
+        </div>
     </header>
     <div id="vertical_spacing"></div>
     <main>
@@ -57,22 +61,23 @@
                     <div></div>
                     <div> 
                         <h2>Number of Questions:</h2>
-                        <input value="100" type="number" id="number_input" min="0" max="100">
+                        <input value="0" type="number" class="number_questions_input" min="1" max="0">
                     </div>
                     <button id="flashcards_start" class="start_button">Start!</button>
                     <div></div>
                 </div>
             </div>
             <div id="flashcards_content">
+                <h1 id="flashcards_content_heading">Flashcards: 0/0</h1>
                 <div id="flashcards_main">
-                    <button>&lt</button>
+                    <button id="prev_flashcard">&lt</button>
                     <div id="flashcard_front">
-                        <p></p>
+                        <p>term</p>
                     </div>
                     <div id="flashcard_back">
-                        <p></p>
+                        <p>definition</p>
                     </div>
-                    <button>&gt</button>
+                    <button id="next_flashcard">&gt</button>
                 </div>
                 <div id="flashcard_controls">
                     <button id="flip">Flip</button>

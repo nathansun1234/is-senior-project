@@ -25,7 +25,25 @@ header {
     padding: 20px 0px 20px 0px;
     position:fixed;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
+
+#left-buttons, #right-button {
+    display: flex;
+}
+
+#left-buttons > button, #right-button > button {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#header_logo_button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 #vertical_spacing {
     height: 60px;
 }
@@ -158,16 +176,17 @@ button {
 
 #flashcard_front, #flashcard_back {
     position: absolute;
+    display: flex;
+    justify-content: center;
     left: 50%;
     transform: translateX(-50%);
+    align-items: center;
     z-index: -1;
-    opacity: 0.5;
     height: 500px;
     width: 800px;
     background-color: white;
     border-radius: 20px;
     backface-visibility: hidden;
-    transition: transform 0.5s;
 }
 
 #flashcard_controls {
