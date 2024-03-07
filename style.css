@@ -202,18 +202,121 @@ button {
     border-radius: 20px;
 }
 
-#flashcards_main button{
+#flashcards_main button {
     height: 500px;
     width: 100px;
     border-radius: 20px;
 }
 
+#mcqs {
+    padding: 20px 20px 20px 20px;
+}
+
+
+#mcqs_main button {
+    height: 550px;
+    width: 100px;
+    border-radius: 20px;
+}
+
+#mcqs_main {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 1300px;
+
+}
+
+#mcqs_question {
+    height: 320px;
+    width: 800px;
+    background-color: white;
+    border-radius: 20px;
+    justify-content: center;
+}
+
+#mcqs_answers {
+    margin-top: 20px;
+}
+
+#top_choices button, #bottom_choices button {
+    width: 400px;
+    height: 100px;
+}
+
+.mode_finished {
+    display: inline-block;
+}
+
+.mode_finished_header {
+    display: inline-flex;
+    align-self: center;
+    width: 1300px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.mode_finished_header {
+    margin: 10px 10px 10px 10px;
+    background-color: white;
+    display: inline-block;
+}
+.mode_finished_body {
+    width: 1300px;
+    height: 500px;
+    margin: 10px 10px 10px 10px;
+    display: inline-flex;
+}
+
+.mode_finished_left_div {
+    width: 600px;
+    height: 440px;
+    border-radius: 20px;
+    margin: 10px 10px 10px 0px;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-shrink: 0;
+}
+
+.mode_finished_right_div {
+    width: 640px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    flex-shrink: 0;
+}
+.mode_finished_body button {
+    padding: 20px;
+    border-radius: 20px;
+    height: 150px;
+    background-color: white;
+}
+
+#mcqs_not_done_popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.restart_mode {
+    margin: 20px 0px;
+}
 .selected {
     background-color: cornflowerblue;
     color: white;
 }
 
 footer {
+    display: inline-block;
     background-color: cornflowerblue;
     padding: 20px 0px 20px 0px;
+    margin-top: 20px;
+    width: 100%;
 }

@@ -11,6 +11,7 @@
         <div id="left-buttons">
             <button id="header_home_button">Home</button>
             <button id="header_flashcards_button">Flashcards</button>
+            <button id="header_mcqs_button">Multiple Choice</button>
         </div>
         <button id="header_logo_button">LOGO</button>
         <div id="right-button">
@@ -36,8 +37,8 @@
                 <div id="modes_container">
                     <div></div>
                     <button id="flashcards_button_home">Flashcards</button>
-                    <button id="mcq_button_home">Multiple Choice (TODO)</button>
-                    <button id="mcq_button_home">Graphing (TODO)</button>
+                    <button id="mcqs_button_home">Multiple Choice</button>
+                    <button id="graphing_button_home">Graphing (TODO)</button>
                     <div></div>
                 </div>
             </div>
@@ -61,7 +62,7 @@
                     <div></div>
                     <div> 
                         <h2>Number of Questions:</h2>
-                        <input value="0" type="number" class="number_questions_input" min="1" max="0">
+                        <input value="0" type="number" id="flashcards_number_of_questions_input" min="1" max="0">
                     </div>
                     <button id="flashcards_start" class="start_button">Start!</button>
                     <div></div>
@@ -85,14 +86,91 @@
                 </div>
             </div>
             <div id="flashcards_complete" class="mode_finished">
-                <p>flashcards finished</p>
+                <div class="mode_finished_header">
+                    <p>Flashcards</p>
+                </div>
+                <div class="mode_finished_body">
+                    <div class="mode_finished_left_div">
+                        <p></p>
+                    </div>
+                    <div class="mode_finished_right_div">
+                        <button id="flashcards_review_unknown">New Flashcards w/ Unknown</button>
+                        <button id="flashcrads_restart_mode">Restart Current Topics</button>
+                        <button id="flashcards_complete_home" class="mode_home">Flashcards Home</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mcqs">
+            <div id="mcqs_landing">
+                <h1>Multiple Choice Questions</h1>
+                <div id="mcqs_topic_selector" class="topics_selector">
+                    <h2>Select Topics</h2>
+                    <div class="topics_selector_container">
+                        <div></div>
+                        <button class="select_reflections">Reflections</button>
+                        <button class="select_rotations">Rotations</button>
+                        <button class="select_translations">Translations</button>
+                        <button class="select_congruency">Congruency</button>
+                        <div></div>
+                    </div>
+                </div>
+                <button class="select_all_topics">Select All</button>
+                <div class="start_controls">
+                    <div></div>
+                    <div> 
+                        <h2>Number of Questions:</h2>
+                        <input value="0" type="number" id="mcqs_number_of_questions_input" min="1" max="0">
+                    </div>
+                    <button id="mcqs_start" class="start_button">Start!</button>
+                    <div></div>
+                </div>
+            </div>
+            <div id="mcqs_content">
+                <h1 id="mcqs_content_heading">Multiple Choice Questions: 0/0</h1>
+                <div id="mcqs_main">
+                    <button id="prev_mcq">&lt</button>
+                    <div id="mcqs_middle">
+                        <div id="mcqs_question">
+                            <p>question</p>
+                        </div>
+                        <div id="mcqs_answers">
+                            <div id="top_choices">
+                                <button class="a">A</button>
+                                <button class="b">B</button>
+                            </div>
+                            <div id="bottom_choices">
+                                <button class="c">C</button>
+                                <button class="d">D</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="next_mcq">&gt</button>
+                </div>
+                <div id="mcqs_not_done_popup">
+                    <p>You didn't finish every question yet! Go back and check which ones you didn't do</p>
+                </div>
+            </div>
+            <div id="mcqs_complete" class="mode_finished">
+                <div class="mode_finished_header">
+                    <p>Multiple Choice</p>
+                </div>
+                <div class="mode_finished_body">
+                    <div class="mode_finished_left_div">
+                        <p></p>
+                    </div>
+                    <div class="mode_finished_right_div">
+                        <button id="mcqs_review_unknown">New Multiple Choice with Incorrect</button>
+                        <button id="mcqs_restart_mode">Restart Current Topics</button>
+                        <button id="mcqs_complete_home">Multiple Choice Home</button>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="settings">
             <p>example settings content</p>
         </div>
     </main>
-
     <footer>
         <p>footer</p>
     </footer>
