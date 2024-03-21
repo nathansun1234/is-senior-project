@@ -12,6 +12,7 @@
             <button id="header_home_button">Home</button>
             <button id="header_flashcards_button">Flashcards</button>
             <button id="header_mcqs_button">Multiple Choice</button>
+            <button id="header_graphing_button">Graphing</button>
         </div>
         <button id="header_logo_button">LOGO</button>
         <div id="right-button">
@@ -28,8 +29,8 @@
                     <button>Last Praticed</button>
                 </div>
                 <div id="levelling_display">
-                    <h2>Level: TODO</h2>
-                    <button>Level</button>
+                    <h2>Level</h2>
+                    <button id="level_button">Level</button>
                 </div>
             </div>
             <div id="modes">
@@ -38,7 +39,7 @@
                     <div></div>
                     <button id="flashcards_button_home">Flashcards</button>
                     <button id="mcqs_button_home">Multiple Choice</button>
-                    <button id="graphing_button_home">Graphing (TODO)</button>
+                    <button id="graphing_button_home">Graphing</button>
                     <div></div>
                 </div>
             </div>
@@ -95,7 +96,7 @@
                     </div>
                     <div class="mode_finished_right_div">
                         <button id="flashcards_review_unknown">New Flashcards w/ Unknown</button>
-                        <button id="flashcrads_restart_mode">Restart Current Topics</button>
+                        <button id="flashcrads_restart_mode">Restart Current Questions</button>
                         <button id="flashcards_complete_home" class="mode_home">Flashcards Home</button>
                     </div>
                 </div>
@@ -161,8 +162,65 @@
                     </div>
                     <div class="mode_finished_right_div">
                         <button id="mcqs_review_unknown">New Multiple Choice with Incorrect</button>
-                        <button id="mcqs_restart_mode">Restart Current Topics</button>
+                        <button id="mcqs_restart_mode">Restart Current Questions</button>
                         <button id="mcqs_complete_home">Multiple Choice Home</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="graphing">
+            <div id="graphing_landing">
+                <h1>Graphing</h1>
+                <div id="graphing_topics_selecter" class="topics_selector">
+                    <h2>Select Topics</h2>
+                    <div class="topics_selector_container">
+                        <div></div>
+                        <button class="select_reflections">Reflections</button>
+                        <button class="select_rotations">Rotations</button>
+                        <button class="select_translations">Translations</button>
+                        <button class="select_congruency">Congruency</button>
+                        <div></div>
+                    </div>
+                </div>
+                <button class="select_all_topics">Select All</button>
+                <div class="start_controls">
+                    <div></div>
+                    <div> 
+                        <h2>Number of Questions:</h2>
+                        <input value="0" type="number" id="graphing_number_of_questions_input" min="1" max="0">
+                    </div>
+                    <button id="graphing_start" class="start_button">Start!</button>
+                    <div></div>
+                </div>
+            </div>
+            <div id="graphing_content">
+                <h1 id="graphing_content_heading">Graphing: 0/0</h1>
+                <div id="graphing_main">
+                    <button id="prev_graphing">&lt</button>
+                    <div id="graphing_center">
+                        <div id="graphing_question_text">
+                            <p>question</p>
+                        </div>
+                        <div id="graph_interface">
+                            <img src="graph.png" width = "800" height = "400"/>
+                        </div>
+                        <button id="reset_graphing">Reset Point</button>
+                    </div>
+                    <button id="next_graphing">&gt</button>
+                </div>
+            </div>
+            <div id="graphing_complete" class="mode_finished">
+                <div class="mode_finished_header">
+                    <p>Graphing</p>
+                </div>
+                <div class="mode_finished_body">
+                    <div class="mode_finished_left_div">
+                        <p></p>
+                    </div>
+                    <div class="mode_finished_right_div">
+                        <button id="graphing_review_unknown">New Graphing w/ Unknown</button>
+                        <button id="graphing_restart_mode">Restart Current Questions</button>
+                        <button id="graphing_complete_home" class="mode_home">Graphing Home</button>
                     </div>
                 </div>
             </div>

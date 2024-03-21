@@ -1,0 +1,242 @@
+•	The preimage (1, 2) is reflected over the x axis. Where is the image of the transformation?
+o	1 unit to the right of and 2 unit below the origin
+o	1 unit to the left of and 2 unit below the origin
+o	1 unit to the right of and 2 unit above the origin
+o	1 unit to the left of and 2 unit above the origin
+•	The preimage (-3, 2) is reflected over the x axis. Where is the image of the transformation?
+o	3 unit to the left of and 2 unit below the origin
+o	3 unit to the right of and 2 unit below the origin
+o	3 unit to the left of and 2 unit above the origin
+o	3 unit to the right of and 2 unit above the origin
+•	The preimage (5, -2) reflected over the x axis. Where is the image of the transformation?
+o	5 units to the right of and 2 units above the origin
+o	5 units to the left of and 2 units above the origin
+o	5 units to the right of and 2 units below the origin
+o	5 units to the left of and 2 units below the origin
+•	The preimage (-3, -3) is reflected over the x axis. Where is the image of the transformation?
+o	 3 unit to the left of and 3 unit above the origin
+o	3 unit to the right of and 3 unit above the origin
+o	3 unit to the left of and 3 unit below the origin
+o	3 unit to the right of and 3 unit below the origin
+•	The preimage (7, 8) is reflected over the x axis. Where is the image of the transformation?
+o	7 unit to the right of and 8 unit below the origin
+o	7 unit to the left of and 8 unit below the origin
+o	7 unit to the right of and 8 unit above the origin
+o	7 unit to the left of and 8 unit above the origin
+•	The preimage (-4, 5) is reflected over the x axis. Where is the image of the transformation?
+o	4 unit to the left of and 5 unit below the origin
+o	4 unit to the right of and 5 unit below the origin
+o	4 unit to the left of and 5 unit above the origin
+o	4 unit to the right of and 5 unit above the origin
+•	The preimage (3, -6) is reflected over the x axis. Where is the image of the transformation?
+o	3 unit to the right of and 6 unit above the origin
+o	3 unit to the left of and 6 unit above the origin
+o	3 unit to the right of and 6 unit below the origin
+o	3 unit to the left of and 6 unit below the origin
+•	The preimage (-1, -4) is reflected over the x axis. Where is the image of the transformation?
+o	1 unit to the left of and 4 unit above the origin
+o	1 unit to the right of and 4 unit above the origin
+o	1 unit to the left of and 4 unit below the origin
+o	1 unit to the right of and 4 unit below the origin
+•	The preimage (2, 3) is reflected over the y axis. Where is the image of the transformation?
+o	2 unit to the left of and 3 unit above the origin
+o	2 unit to the right of and 3 unit above the origin
+o	2 unit to the left of and 3 unit below the origin
+o	2 unit to the right of and 3 unit below the origin
+•	The preimage (-7, 5) is reflected over the y axis. Where is the image of the transformation?
+o	7 unit to the right of and 5 unit above the origin
+o	7 unit to the left of and 5 unit above the origin
+o	7 unit to the right of and 5 unit below the origin
+o	7 unit to the left of and 5 unit below the origin
+•	The point (3, -7) is reflected over the y axis. Where is the image of the transformation?
+o	3 unit to the left of and 7 unit below the origin
+o	3 unit to the right of and 7 unit below the origin
+o	3 unit to the left of and 7 unit above the origin
+o	3 unit to the right of and 7 unit above the origin
+•	The preimage (-1, -2) is reflected over the y axis. Where is the image of the transformation?
+o	1 unit to the right of and 2 unit below the origin
+o	1 unit to the left of and 2 unit below the origin
+o	1 unit to the right of and 2 unit above the origin
+o	1 unit to the left of and 2 unit above the origin
+•	The preimage (5, 3) is reflected over the y axis. Where is the image of the transformation?
+o	5 unit to the left of and 3 unit above the origin
+o	5 unit to the right of and 3 unit above the origin
+o	5 unit to the left of and 3 unit below the origin
+o	5 unit to the right of and 3 unit below the origin
+•	The preimage (-6, 6) is reflected over the y axis. Where is the image of the transformation?
+o	6 unit to the right of and 6 unit above the origin
+o	6 unit to the left of and 6 unit above the origin
+o	6 unit to the right of and 6 unit below the origin
+o	6 unit to the left of and 6 unit below the origin
+•	The preimage (2, -8) is reflected over the y axis. Where is the image of the transformation?
+o	2 unit to the left of and 8 unit below the origin
+o	2 unit to the right of and 8 unit below the origin
+o	2 unit to the left of and 8 unit above the origin
+o	2 unit to the right of and 8 unit above the origin
+•	The preimage (-9, -4) is reflected over the y axis. Where is the image of the transformation?
+o	9 unit to the right of and 4 unit below the origin
+o	9 unit to the left of and 4 unit below the origin
+o	9 unit to the right of and 4 unit above the origin
+o	9 unit to the left of and 4 unit below the origin
+Rotations
+•	The preimage (2, 4) is rotated 90 degrees clockwise. Where is the image of the transformation?
+o	4 unit to the right of and 2 unit below the origin
+o	2 unit to the right of and 4 unit below the origin
+o	4 unit to the left of and 2 unit above the origin
+o	2 unit to the left of and 4 unit above the origin
+•	The preimage (-1, -6) is rotated 90 degrees clockwise. Where is the image of the transformation?
+o	6 unit to the left of and 1 unit above the origin
+o	1 unit to the left of and 6 unit above the origin
+o	6 unit to the right of and 1 unit below the origin
+o	1 unit to the right of and 6 unit below the origin
+•	The preimage (5, -7) is rotated 180 degrees clockwise. Where is the image of the transformation?
+o	5 unit to the left of and 7 unit above the origin
+o	7 unit to the left of and 5 unit above the origin
+o	5 unit to the right of and 7 unit below the origin
+o	7 unit to the right of and 5 unit below the origin
+•	The preimage (-6, 1) is rotated 180 degrees clockwise. Where is the image of the transformation?
+o	6 unit to the right of and 1 unit below the origin
+o	1 unit to the right of and 6 unit below the origin
+o	6 unit to the left of and 1 unit above the origin
+o	1 unit to the left of and 6 unit above the origin
+•	The preimage (2, 2) is rotated 270 degrees clockwise. Where is the image of the transformation?
+o	2 units to the left of and 2 units above the origin
+o	2 units to the right of and 2 units above the origin
+o	2 units to the left of and 2 units below the origin
+o	2 units to the right of and 2 units below the origin
+•	The preimage (-9, -5) is rotated 270 degrees clockwise. Where is the image of the transformation?
+o	5 units to the right of and 9 units below the origin
+o	9 units to the right of and 5 units below the origin
+o	5 units to the left of and 9 units above the origin
+o	9 units to the left of and 5 units above the origin
+•	The preimage (4, -4) is rotated 360 degrees clockwise. Where is the image of the transformation?
+o	4 unit to the right of and 4 unit below the origin
+o	4 unit to the left of and 4 unit below the origin
+o	4 unit to the right of and 4 unit above the origin
+o	4 unit to the left of and 4 unit above the origin
+•	The preimage (-6, 2) is rotated 360 degrees clockwise. Where is the image of the transformation?
+o	6 unit to the left of and 2 unit above the origin
+o	2 unit to the left of and 6 unit above the origin
+o	6 unit to the right of and 2 unit below the origin
+o	2 unit to the right of and 6 unit below the origin
+•	The preimage (8, 3) is rotated 90 degrees counterclockwise. Where is the image of the transformation?
+o	3 units to the left of and 8 units above the origin
+o	8 units to the left of and 3 units above the origin
+o	3 units to the right of and 8 units below the origin
+o	8 units to the right of and 3 units below the origin
+•	The preimage (-2, -3) is rotated 90 degrees counterclockwise. Where is the image of the transformation?
+o	3 units to the right of and 2 units below the origin
+o	2 units to the right of and 3 units below the origin
+o	3 units to the left of and 2 units above the origin
+o	2 units to the left of and 3 units above the origin
+•	The preimage (3, -1) rotated 180 degrees counterclockwise. Where is the image of the transformation?
+o	3 unit to the left of and 1 unit above the origin
+o	1 unit to the left of and 3 unit above the origin
+o	3 unit to the right of and 1 unit below the origin
+o	1 unit to the right of and 3 unit below the origin
+•	The preimage (0, 7) is rotated 180 degrees counterclockwise. Where is the image of the transformation?
+o	0 unit to the left of and 7 unit below the origin
+o	7 unit to the left of and 0 unit below the origin
+o	0 unit to the right of and 7 unit above the origin
+o	7 unit to the right of and 0 unit above the origin
+•	The preimage (9, 3) is rotated 270 degrees counterclockwise. Where is the image of the transformation?
+o	3 units to the right of and 9 units below the origin
+o	9 units to the right of and 3 units below the origin
+o	3 units to the left of and 9 units above the origin
+o	9 units to the left of and 3 units above the origin
+•	The preimage (-7, -4) is rotated 270 degrees counterclockwise. Where is the image of the transformation?
+o	4 units to the left of and 7 units above the origin
+o	7 units to the left of and 4 units above the origin
+o	4 units to the right of and 7 units below the origin
+o	7 units to the right of and 4 units below the origin
+•	The preimage (7, -5) rotated 360 degrees counterclockwise. Where is the image of the transformation?
+o	7 unit to the right of and 5 unit below the origin
+o	5 unit to the right of and 7 unit below the origin
+o	7 unit to the left of and 5 unit above the origin
+o	5 unit to the left of and 7 unit above the origin
+•	The preimage (-2, 2) is rotated 360 degrees counterclockwise. Where is the image of the transformation?
+o	2 unit to the left of and 2 unit above the origin
+o	2 unit to the right of and 2 unit above the origin
+o	2 unit to the left of and 2 unit below the origin
+o	2 unit to the right of and 2 unit below the origin
+Translations
+•	The preimage (2, 5) is translated with the rule (x+3, y+5). Where is the image of the transformation?
+o	5 units to the right of and 10 units above the origin
+o	3 units to the left of 10 units above the origin
+o	5 units to the right of and 0 units above the origin
+o	3 units to the left of and 0 units above the origin 
+•	The preimage (-3, 0) is translated with the rule (x+0, y+6). Where is the image of the transformation?
+o	3 units to the left of and 6 units above the origin
+o	3 units to the left of and 6 units below the origin
+o	9 units to the left of and 0 units above the origin
+o	3 units to the right of and 0 units above the origin
+•	The preimage (2, -9) is translated with the rule (x-3 , y+1). Where is the image of the transformation?
+o	1 unit to the left of and 8 units below the origin
+o	3 units to the right of and 8 units below the origin
+o	1 unit to the left of and 6 units below the origin
+o	3 units to the right of and 6 units below the origin
+•	The preimage (-8, -8) is translated with the rule (x-5, y+5). Where is the image of the transformation?
+o	13 units to the left of and 3 units below the origin
+o	3 units to the left of and 13 units below the origin
+o	13 units to the left of and 13 units below the origin
+o	3 units to the left of and 3 units below the origin
+•	The preimage (3, 6) is translated with the rule (x+5, y-4). Where is the image of the transformation?
+o	8 units to the right of and 2 units above the origin
+o	1 unit to the left of and 11 units above the origin
+o	8 units to the left of and 11 units above the origin
+o	1 unit to the left of and 2 units above the origin
+•	The preimage (-6, 2) is translated with the rule (x+6, y-6). Where is the image of the transformation?
+o	0 units to the right of and 4 units below the origin
+o	12 units to the left of and 4 units below the origin
+o	0 units to the right of and 8 units above the origin
+o	12 units to the left of and 8 units above the origin
+•	The preimage (2, -3) is translated with the rule (x-2, y-3). Where is the image of the transformation?
+o	0 units to the right of and 6 units below the origin
+o	4 units to the right of and 6 units below the origin
+o	0 units to the right of and 0 units above the origin
+o	4 units to the right of 0 units above the origin
+•	The preimage (-1, -5) is translated with the rule (x-4, y-9). Where is the image of the transformation?
+o	5 units to the left of and 14 units below the origin
+o	3 units to the right of and 14 units below the origin
+o	5 units to the left of and 4 units above the origin
+o	3 units to the right of and 14 units below the origin
+•	If the image of a point that was translated with the rule (x+5, y+2) is the point (0, 4), where was the original (preimage) point?
+o	5 units to the left of and 2 units above the origin
+o	5 units to the right of and 2 units below the origin
+o	9 units to the right of and 2 units above the origin
+o	9 units to the left of and 2 units above the origin
+•	If the image of a point that was translated with the rule (x-1, y+2) is the point (4, 2), where was the original (preimage) point?
+o	5 units to the right of and 0 units above the origin
+o	5 units to the right of and 4 units above the origin
+o	3 units to the right of and 0 units above the origin
+o	3 units to the right of and 3 units above the origin
+•	If the image of a point that was translated with the rule (x+5, y-6) the point (-9, 0), where was the original (preimage) point?
+o	14 units to the left of and 6 units above the origin
+o	4 units to the left of and 6 units above the origin
+o	15 units to the left of and 5 units below the origin
+o	15 unit to the left of and 5 units above the origin
+•	If the image of a point that was translated with the rule (x-8, y+0) is the point (-1, 0), where was the original (preimage) point?
+o	7 units to the right of and 0 units above the origin
+o	9 units to the left of and 0 units above the origin
+o	7 units to the left of and 8 units above the origin
+o	9 units to the left of and 8 units above the origin
+•	If the image of a point that was translated with the rule (x+2, y+1) is the point (0, -2), where was the original (preimage) point?
+o	2 units to the left of and 3 units below the origin
+o	2 units to the right of and 1 unit below the origin
+o	2 units to the left of and 1 unit below the origin
+o	2 units to the right of and 3 units below the origin
+•	If the image of a point that was translated with the rule (x-3, y+8) is the point (2, -1), where was the original (preimage) point?
+o	5 units to the right of and 9 units below the origin
+o	1 unit to the left of and 9 units below the origin
+o	5 units to the right of and 7 units above the origin
+o	1 unit to the left of and 7 units above the origin
+•	If the image of a point that was translated with the rule (x+0, y-7) is the point (-8, -9), where was the original (preimage) point?
+o	8 units to the left of and 2 units below the origin
+o	8 units to the left of and 16 units below the origin
+o	9 units to the right of and 9 units below the origin
+o	7 units to the left of and 1 unit below the origin
+•	If the image of a point that was translated with the rule (x-9, y-2)is the point (-9, -8), where was the original (preimage) point?
+o	0 units to the right of and 6 units below the origin
+o	18 units to the left of and 2 units above the origin
+o	0 units to the right of and 2 units above the origin
+o	18 units to the left of 6 units below the origin
