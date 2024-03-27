@@ -160,9 +160,10 @@ $(document).ready(function(){
         return updateExp(current + n);
     }
 
-    let userExp = null;
-    updateExp(1);
-
+    let userExp = getCookie("userExp");
+    if (userExp == null) {
+        updateExp(1);
+    }
     
     //----------TOPICS SELECTION----------
     
@@ -410,7 +411,7 @@ $(document).ready(function(){
     });
 
     //----------MCQS----------
-    let selectedChoices = [];
+    let selectedMCQChoices = [];
     let unscrambledFinalMcqs = [];
     let finalMcqs = [];
 
@@ -441,7 +442,7 @@ $(document).ready(function(){
             $("#mcqs_landing").hide();
             $("#mcqs_content").show();
 
-            selectedChoices = new Array(numberOfQuestions).fill(null);
+            selectedMCQChoices = new Array(numberOfQuestions).fill(null);
             updateMcqsContentHeading(currentIndex, numberOfQuestions);
             displayMcq(currentIndex);
         }
@@ -476,9 +477,9 @@ $(document).ready(function(){
 
         answerButtons.removeClass('selected');
 
-        if (selectedChoices[index] !== null) {
+        if (selectedMCQChoices[index] !== null) {
             answerButtons.each(function(i) {
-                if ($(this).text() == selectedChoices[index]) {
+                if ($(this).text() == selectedMCQChoices[index]) {
                     $(this).addClass("selected");
                 }
             });
@@ -490,15 +491,15 @@ $(document).ready(function(){
     $('#mcqs_answers button').click(function() {
         if ($(this).hasClass("selected")) {
             $(this).removeClass("selected")
-            selectedChoices[currentIndex] = null;
+            selectedMCQChoices[currentIndex] = null;
         }
         else {
             $(this).addClass('selected').siblings().removeClass('selected');
             $(this).parent().siblings().children('button').removeClass('selected');
 
-            selectedChoices[currentIndex] = $(this).text();
+            selectedMCQChoices[currentIndex] = $(this).text();
         }
-        console.log(selectedChoices);
+        console.log(selectedMCQChoices);
     });    
 
     function shuffleArray(array) {
@@ -535,7 +536,7 @@ $(document).ready(function(){
     });
 
     function displayMcqComplete() {
-        if (selectedChoices.includes(null)) {
+        if (selectedMCQChoices.includes(null)) {
             var popup = document.getElementById("mcqs_not_done_popup");
             popup.style.display = "block";
             
@@ -545,11 +546,11 @@ $(document).ready(function(){
         }
         else {
             for (var i = 0; i < numberOfQuestions; i++) {
-                if (selectedChoices[i] !== unscrambledFinalMcqs[i].answers[0]) {
+                if (selectedMCQChoices[i] !== unscrambledFinalMcqs[i].answers[0]) {
                     incorrectQuestions.push(unscrambledFinalMcqs[i]);
                 }
             }
-            console.log(selectedChoices);
+            console.log(selectedMCQChoices);
             console.log(unscrambledFinalMcqs);
             console.log(incorrectQuestions);
             $("#mcqs").show();
@@ -585,7 +586,7 @@ $(document).ready(function(){
                     answers: shuffledAnswers
                 };
             });
-            selectedChoices = new Array(numberOfQuestions).fill(null);
+            selectedMCQChoices = new Array(numberOfQuestions).fill(null);
 
             updateMcqsContentHeading(currentIndex, numberOfQuestions);
             displayMcq(currentIndex);
@@ -605,7 +606,7 @@ $(document).ready(function(){
 
         incorrectQuestions = [];
         currentIndex = 0;
-        selectedChoices = new Array(numberOfQuestions).fill(null);
+        selectedMCQChoices = new Array(numberOfQuestions).fill(null);
 
         updateMcqsContentHeading(currentIndex, numberOfQuestions);
         displayMcq(currentIndex);
@@ -617,20 +618,51 @@ $(document).ready(function(){
         $("#mcqs_complete").hide();
     });
     //----------GRAPHING----------
-    //temp code for testing css
+    let graphingResponses = [];
+    let finalGraphingQuestions = [];
+
     $('#graphing_start').click(function() {
-        $("#graphing").show();
+        if (parseInt($('#mcqs_number_of_questions_input').val()) > 0) {
+            incorrectQuestions = [];
+            numberOfQuestions = parseInt($('#graphing_number_of_questions_input').val());
+            console.log(numberOfQuestions);
+            finalGraphingQuestions = getRandomQuestions(graphingData, selectedTopics, numberOfQuestions);
 
-        $("#graphing_landing").hide();
-        $("#graphing_content").show();
+            console.log(finalGraphingQuestions);
+            
+            currentIndex = 0;
+            
+            console.log("updated final graphing questions list: ");
+            console.log(finalGraphingQuestions);
+
+            $("#graphing").show();
+
+            $("#graphing_landing").hide();
+            $("#graphing_content").show();
+
+            graphingResponses = new Array(numberOfQuestions).fill(null);
+            updateGraphingContentHeading(currentIndex, numberOfQuestions);
+            displayGraphingQuestion(currentIndex);
+        }
+        else {
+            $('#graphing_start').css('background-color', 'red');
+            setTimeout(function() {
+                $('#graphing_start').css('background-color', '');
+            }, 500);
+        }
     });
+    function updateGraphingContentHeading(index, total) {
+        $('#graphing_content_heading').html(`Graphing: ${index + 1}/${total}`);
+    }
+    function displayGraphingQuestion(index) {
+        pass;
+    }
+    // $('#next_graphing').click(function() {
+    //     $("#graphing").show();
 
-    $('#next_graphing').click(function() {
-        $("#graphing").show();
-
-        $("#graphing_content").hide();
-        $("#graphing_complete").show();
-    });
+    //     $("#graphing_content").hide();
+    //     $("#graphing_complete").show();
+    // });
     //----------DATA----------
     let flashcardsData = {
         "topics": {
