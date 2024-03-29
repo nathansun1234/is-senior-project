@@ -160,10 +160,11 @@ $(document).ready(function(){
         return updateExp(current + n);
     }
 
-    let userExp = getCookie("userExp");
-    if (userExp == null) {
-        updateExp(1);
-    }
+    let userExp = null;
+
+    userExp = getCookie("userExp");
+    updateExp(userExp);
+
     
     //----------TOPICS SELECTION----------
     
@@ -484,8 +485,6 @@ $(document).ready(function(){
                 }
             });
         }
-
-        $('#mcqs_question p').text(finalMcqs[index].question);
     }
 
     $('#mcqs_answers button').click(function() {
@@ -622,7 +621,7 @@ $(document).ready(function(){
     let finalGraphingQuestions = [];
 
     $('#graphing_start').click(function() {
-        if (parseInt($('#mcqs_number_of_questions_input').val()) > 0) {
+        if (parseInt($('#graphing_number_of_questions_input').val()) > 0) {
             incorrectQuestions = [];
             numberOfQuestions = parseInt($('#graphing_number_of_questions_input').val());
             console.log(numberOfQuestions);
@@ -642,7 +641,7 @@ $(document).ready(function(){
 
             graphingResponses = new Array(numberOfQuestions).fill(null);
             updateGraphingContentHeading(currentIndex, numberOfQuestions);
-            displayGraphingQuestion(currentIndex);
+            displayGraphing(currentIndex);
         }
         else {
             $('#graphing_start').css('background-color', 'red');
@@ -654,15 +653,163 @@ $(document).ready(function(){
     function updateGraphingContentHeading(index, total) {
         $('#graphing_content_heading').html(`Graphing: ${index + 1}/${total}`);
     }
-    function displayGraphingQuestion(index) {
-        pass;
-    }
-    // $('#next_graphing').click(function() {
-    //     $("#graphing").show();
 
-    //     $("#graphing_content").hide();
-    //     $("#graphing_complete").show();
-    // });
+    function drawPoint(x, y, response) {
+        // Calculate relative coordinates based on graph interface dimensions
+        var centerX = $('#graph_interface').width() / 2;
+        var centerY = $('#graph_interface').height() / 2;
+        var relativeX = centerX + x * 26.6667; // Adjust based on the scale used in the original code
+        var relativeY = centerY - y * 25; // Adjust based on the scale used in the original code
+    
+        // Append a new dot representing the point
+        if (response) {
+            $('#graph_interface').find('.responsePoint').remove();
+            $('#graph_interface').append(`<div class="responsePoint" style="position: absolute; left: ${relativeX + $('#graph_interface').offset().left}px; top: ${relativeY + $('#graph_interface').offset().top}px; width: 5px; height: 5px; background-color: blue; border-radius: 50%;"></div>`);
+        }
+        else {
+            $('#graph_interface').find('.promptPoint').remove();
+            $('#graph_interface').append(`<div class="promptPoint" style="position: absolute; left: ${relativeX + $('#graph_interface').offset().left}px; top: ${relativeY + $('#graph_interface').offset().top}px; width: 5px; height: 5px; background-color: red; border-radius: 50%;"></div>`);
+        }
+    }
+
+    $('#graph_interface').click(function(event) {
+
+        var offset = $(this).offset();
+        var relativeX = event.pageX - offset.left;
+        var relativeY = event.pageY - offset.top;
+
+        var centerX = $(this).width() / 2;
+        var centerY = $(this).height() / 2;
+
+        var graphX = Math.round((relativeX - centerX) / 26.6667);
+        var graphY = Math.round(( centerY - relativeY) / 25); 
+
+        drawPoint(graphX, graphY, true);
+
+        console.log({x: graphX, y: graphY});
+        graphingResponses[currentIndex] = [graphX, graphY];
+        console.log(graphingResponses);
+    });
+
+    $('#reset_graphing').click(function() {
+        $('#graph_interface').find('.responsePoint').remove();
+        console.log(graphingResponses);
+        graphingResponses[currentIndex] = null;
+    });
+
+    function displayGraphing(index) {
+        if (finalGraphingQuestions.length === 0 || index < 0 || index >= finalGraphingQuestions.length) {
+            console.error();
+            return;
+        }
+
+        $('#graphing_question_text p').text(finalGraphingQuestions[index].question);
+
+        drawPoint(finalGraphingQuestions[currentIndex].preimage[0], finalGraphingQuestions[currentIndex].preimage[1], false);
+        if (graphingResponses[currentIndex] != null) {
+            drawPoint(graphingResponses[currentIndex][0], graphingResponses[currentIndex][1], true);
+        }
+        else {
+            $('#graph_interface').find('.responsePoint').remove();
+        }
+    }
+
+    $('#prev_graphing').click(function() {
+        if (currentIndex > 0) {
+            currentIndex -= 1;
+            console.log("updated current index: " + currentIndex);
+            updateGraphingContentHeading(currentIndex, numberOfQuestions)
+            displayGraphing(currentIndex);
+        }
+    });
+    
+    $('#next_graphing').click(function() {
+        if (currentIndex < numberOfQuestions - 1) {
+            currentIndex += 1;
+            console.log("updated current index: " + currentIndex);
+            updateGraphingContentHeading(currentIndex, numberOfQuestions)
+            displayGraphing(currentIndex);
+        }
+        else {
+            displayGraphingComplete()
+        }
+    });
+
+    function displayGraphingComplete() {
+        if (graphingResponses.includes(null)) {
+            var popup = document.getElementById("graphing_not_done_popup");
+            popup.style.display = "block";
+            
+            setTimeout(function() {
+                popup.style.display = "none";
+            }, 2000);
+        }
+        else {
+            for (var i = 0; i < numberOfQuestions; i++) {
+                if (graphingResponses[i][0] != finalGraphingQuestions[i].image[0] || graphingResponses[i][1] != finalGraphingQuestions[i].image[1]) {
+                    incorrectQuestions.push(finalGraphingQuestions[i]);
+                }
+            }
+            console.log(graphingResponses);
+            console.log(finalGraphingQuestions);
+            console.log(incorrectQuestions);
+            $("#graphing").show();
+
+            $("#graphing_landing").hide();
+            $("#graphing_content").hide();
+            $("#graphing_complete").show();
+            
+            var incorrectCount = incorrectQuestions.length;
+            var correctPercentage = (1- (incorrectCount / numberOfQuestions)) * 100;
+            
+            incrementExp(numberOfQuestions * 5 - incorrectCount - 3);
+            var finishedHTML = `Finished! (${correctPercentage.toFixed(2)}% correct (${incorrectCount} incorrect). You earned ${numberOfQuestions * 5 - incorrectCount - 3} experience!`;
+            $(".mode_finished_left_div p").text(finishedHTML);
+    
+        }
+    }
+
+    $('#graphing_review_unknown').click(function() {
+        if (incorrectQuestions.length > 0) {
+            $("#graphing_complete").hide();
+            $("#graphing_content").show();
+
+            finalGraphingQuestions = incorrectQuestions;
+            numberOfQuestions = incorrectQuestions.length;
+            incorrectQuestions = [];
+            currentIndex = 0;
+
+            graphingResponses = new Array(numberOfQuestions).fill(null);
+
+            updateGraphingContentHeading(currentIndex, numberOfQuestions);
+            displayGraphing(currentIndex);
+            
+        }
+        else {
+            $('#graphing_review_unknown').css('background-color', 'red');
+            setTimeout(function() {
+                $('#graphing_review_unknown').css('background-color', '');
+            }, 500);
+        }
+    });
+
+    $('#graphing_restart_mode').click(function() {
+        $("#graphing_complete").hide();
+        $("#graphing_content").show();
+
+        incorrectQuestions = [];
+        currentIndex = 0;
+        graphingResponses = new Array(numberOfQuestions).fill(null);
+
+        updateGraphingContentHeading(currentIndex, numberOfQuestions);
+            displayGraphing(currentIndex);
+    });
+
+
+    $('#graphing_complete_home').click(function() {
+        $("#graphing_landing").show();
+        $("#graphing_complete").hide();
+    });
     //----------DATA----------
     let flashcardsData = {
         "topics": {
