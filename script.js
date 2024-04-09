@@ -210,7 +210,6 @@ $(document).ready(function(){
             $('#graphing_number_of_questions_input').val(result);
         }
         
-        
         console.log("updated max questions: " + result)
         return result;
     }
