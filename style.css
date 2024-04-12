@@ -58,7 +58,7 @@ button {
 #last_practiced {
     padding: 20px 20px 20px 20px;
     height: 300px;
-    width: 600px;
+    width: 450;
     background-color: white;
     display: inline-block;
     margin: 10px 10px 10px 10px;
@@ -74,7 +74,7 @@ button {
 #levelling_display {
     padding: 20px 20px 20px 20px;
     height: 300px;
-    width: 600px;
+    width: 450px;
     background-color: white;
     display: inline-block;
     margin: 10px 10px 10px 10px;
@@ -89,7 +89,7 @@ button {
 
 #modes {
     height: 300px;
-    width: 1260px;
+    width: 960px;
     padding: 20px 20px 20px 20px;
     background-color: white;
     border-radius: 20px;
@@ -117,7 +117,7 @@ button {
 
 .topics_selector {
     height: 300px;
-    width: 1260px;
+    width: 960px;
     padding: 20px 20px 20px 20px;
     background-color: white;
     margin-bottom: 10px;
@@ -133,7 +133,7 @@ button {
 }
 
 .select_all_topics {
-    width: 1300px;
+    width: 1000px;
     height: 70px;
     display: inline-block;
     margin-top: 10px;
@@ -149,7 +149,7 @@ button {
 }
 
 .start_controls {
-    width: 1260px;
+    width: 960px;
     height: 70px;
     padding: 20px 20px 20px 20px;
     margin: 10px 10px 10px 10px;
@@ -171,7 +171,7 @@ button {
 .mode_finished_header {
     display: inline-flex;
     align-self: center;
-    width: 1300px;
+    width: 1000px;
     text-align: center;
     border-radius: 20px;
 }
@@ -182,14 +182,14 @@ button {
     display: inline-block;
 }
 .mode_finished_body {
-    width: 1300px;
+    width: 1000px;
     height: 500px;
     margin: 10px 10px 10px 10px;
     display: inline-flex;
 }
 
 .mode_finished_left_div {
-    width: 600px;
+    width: 450px;
     height: 440px;
     border-radius: 20px;
     margin: 10px 10px 10px 0px;
@@ -201,7 +201,7 @@ button {
 }
 
 .mode_finished_right_div {
-    width: 640px;
+    width: 490px;
     display: flex;
     flex-direction: column;
     margin: 10px;
@@ -229,7 +229,7 @@ button {
 #flashcards_main {
     display: inline-flex;
     justify-content: space-between;
-    width: 1300px;
+    width: 1000px;
     height: 500px;
 }
 
@@ -251,19 +251,19 @@ button {
 #flashcard_controls {
     margin-top: 20px;
     display: inline-flex;
-    width: 1300px;
+    width: 1000px;
     justify-content: space-between;
 }
 
 #flashcard_controls button {
-    width: 600px;
+    width: 475px;
     height: 70px;
     border-radius: 20px;
 }
 
 #flashcards_main button {
     height: 500px;
-    width: 100px;
+    width: 70px;
     border-radius: 20px;
 }
 
@@ -274,14 +274,14 @@ button {
 
 #mcqs_main button {
     height: 550px;
-    width: 100px;
+    width: 75px;
     border-radius: 20px;
 }
 
 #mcqs_main {
     display: inline-flex;
     justify-content: space-between;
-    width: 1300px;
+    width: 1000px;
 
 }
 
@@ -321,7 +321,7 @@ button {
 
 #prev_graphing, #next_graphing {
     height: 550px;
-    width: 100px;
+    width: 75px;
     border-radius: 20px;
 }
 
@@ -335,7 +335,7 @@ button {
 #graphing_main {
     display: inline-flex;
     justify-content: space-between;
-    width: 1300px;
+    width: 1000px;
 
 }
 

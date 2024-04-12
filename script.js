@@ -23,6 +23,8 @@ $(document).ready(function(){
         $("#graphing").hide();
         $("#settings").hide();
         $("#home").show();
+
+        setLastPracticed(modeIndex);
     });
 
     $("#header_flashcards_button").click(function(){
@@ -37,7 +39,8 @@ $(document).ready(function(){
         $("#flashcards_content").hide();
         $("#flashcards_complete").hide();
 
-        mode = flashcardsData;
+        modeData = flashcardsData;
+        modeIndex = 1;
         maxQuestions = updateMaxQuestions(flashcardsData);
         $('#flashcards_number_of_questions_input').val(maxQuestions);
     });
@@ -54,7 +57,8 @@ $(document).ready(function(){
         $("#mcqs_content").hide();
         $("#mcqs_complete").hide();
 
-        mode = mcqsData;
+        modeData = mcqsData;
+        modeIndex = 2;
         maxQuestions = updateMaxQuestions(mcqsData);
         $('#mcqs_number_of_questions_input').val(maxQuestions);
     });
@@ -71,7 +75,8 @@ $(document).ready(function(){
         $("#graphing_content").hide();
         $("#graphing_complete").hide();
 
-        mode = graphingData;
+        modeData = graphingData;
+        modeIndex = 3;
         maxQuestions = updateMaxQuestions(graphingData);
         $('#graphing_number_of_questions_input').val(maxQuestions);
     });
@@ -96,7 +101,8 @@ $(document).ready(function(){
         $("#flashcards_content").hide();
         $("#flashcards_complete").hide();
 
-        mode = flashcardsData;
+        modeData = flashcardsData;
+        modeIndex = 1;
         maxQuestions = updateMaxQuestions(flashcardsData);
         $('#flashcards_number_of_questions_input').val(maxQuestions);
     });
@@ -112,10 +118,111 @@ $(document).ready(function(){
         $("#mcqs_landing").show();
         $("#mcqs_content").hide();
         $("#mcqs_complete").hide();
-        mode = mcqsData;
+
+        modeData = mcqsData;
+        modeIndex = 2;
         maxQuestions = updateMaxQuestions(mcqsData);
         $('#mcqs_number_of_questions_input').val(maxQuestions);
     });
+
+    $("#graphing_button_home").click(function(){
+        $("main").show();
+        $("#home").hide();
+        $("#settings").hide();
+        $("#flashcards").hide();
+        $("#mcqs").hide();
+        $("#graphing").show();
+
+        $("#graphing_landing").show();
+        $("#graphing_content").hide();
+        $("#graphing_complete").hide();
+
+        modeData = graphingData;
+        modeIndex = 3;
+        maxQuestions = updateMaxQuestions(graphingData);
+        $('#graphing_number_of_questions_input').val(maxQuestions);
+    });
+
+    function setLastPracticed(modeIndex) {
+        if (modeIndex == 1) {
+            $("#last_practiced_button").html("Last Practiced: Flashcards");
+        }
+
+        else if (modeIndex == 2) {
+            $("#last_practiced_button").html("Last Practiced: Multiple Choice");
+        }
+
+        else if (modeIndex == 3) {
+            $("#last_practiced_button").html("Last Practiced: Multiple Choice");
+        }
+        else {
+            $("#last_practiced_button").html("Last Practiced: Nothing yet! Choose a mode below to start");
+        }
+    }
+
+    $("#last_practiced_button").click(function(){
+        if (modeIndex == 1) {
+            $("main").show();
+            $("#home").hide();
+            $("#settings").hide();
+            $("#graphing").hide();
+            $("#mcqs").hide();
+            $("#flashcards").show();
+
+            $("#flashcards_landing").show();
+            $("#flashcards_content").hide();
+            $("#flashcards_complete").hide();
+
+            modeData = flashcardsData;
+            modeIndex = 1;
+            maxQuestions = updateMaxQuestions(flashcardsData);
+            $('#flashcards_number_of_questions_input').val(maxQuestions);
+        }
+
+        else if (modeIndex == 2) {
+            $("main").show();
+            $("#home").hide();
+            $("#settings").hide();
+            $("#flashcards").hide();
+            $("#graphing").hide();
+            $("#mcqs").show();
+    
+            $("#mcqs_landing").show();
+            $("#mcqs_content").hide();
+            $("#mcqs_complete").hide();
+    
+            modeData = mcqsData;
+            modeIndex = 2;
+            maxQuestions = updateMaxQuestions(mcqsData);
+            $('#mcqs_number_of_questions_input').val(maxQuestions);
+        }
+
+        else if (modeIndex == 3) {
+            $("main").show();
+            $("#home").hide();
+            $("#settings").hide();
+            $("#flashcards").hide();
+            $("#mcqs").hide();
+            $("#graphing").show();
+    
+            $("#graphing_landing").show();
+            $("#graphing_content").hide();
+            $("#graphing_complete").hide();
+    
+            modeData = graphingData;
+            modeIndex = 3;
+            maxQuestions = updateMaxQuestions(graphingData);
+            $('#graphing_number_of_questions_input').val(maxQuestions);
+        }
+
+        else {
+            $('#last_practiced_button').css('background-color', 'red');
+            setTimeout(function() {
+                $('#last_practiced_button').css('background-color', '');
+            }, 500);
+        }
+    });
+
     //----------EXPERIENCE SYSTEM----------
      function setCookie(name, value, days) {
         var expires = "";
@@ -167,7 +274,9 @@ $(document).ready(function(){
     
     //----------TOPICS SELECTION----------
     
-    let mode = {};
+    let modeData = {};
+    let modeIndex = 0;
+    setLastPracticed(modeIndex);
     let selectedTopics = ["all"];
     let maxQuestions = 0;
     let currentIndex = 0;
@@ -192,20 +301,20 @@ $(document).ready(function(){
         }
     }
 
-    function updateMaxQuestions(dataset, mode) {
+    function updateMaxQuestions(dataset, modeData) {
         var result = 0;
         selectedTopics.forEach(topic => {
             result += dataset.topics[topic].length;
         });
-        if (mode = flashcardsData) {
+        if (modeData = flashcardsData) {
             $('#flashcards_number_of_questions_input').attr('max', result);
             $('#flashcards_number_of_questions_input').val(result);
         }
-        if (mode = mcqsData) {
+        if (modeData = mcqsData) {
             $('#mcqs_number_of_questions_input').attr('max', result);
             $('#mcqs_number_of_questions_input').val(result);
         }
-        if (mode = graphingData) {
+        if (modeData = graphingData) {
             $('#graphing_number_of_questions_input').attr('max', result);
             $('#graphing_number_of_questions_input').val(result);
         }
@@ -231,22 +340,22 @@ $(document).ready(function(){
     
     $('.select_reflections').click(function(){
         toggleTopicSelection('reflections');
-        maxQuestions = updateMaxQuestions(mode);
+        maxQuestions = updateMaxQuestions(modeData);
     });
 
     $('.select_rotations').click(function(){
         toggleTopicSelection('rotations');
-        maxQuestions = updateMaxQuestions(mode);
+        maxQuestions = updateMaxQuestions(modeData);
     });
 
     $('.select_translations').click(function(){
         toggleTopicSelection('translations');
-        maxQuestions = updateMaxQuestions(mode);
+        maxQuestions = updateMaxQuestions(modeData);
     });
 
     $('.select_congruency').click(function(){
         toggleTopicSelection('congruency');
-        maxQuestions = updateMaxQuestions(mode);
+        maxQuestions = updateMaxQuestions(modeData);
     });
     
     $('.select_all_topics').click(function(){
@@ -255,7 +364,7 @@ $(document).ready(function(){
         selectedTopics.push('rotations');
         selectedTopics.push('translations');
         selectedTopics.push('congruency');
-        maxQuestions = updateMaxQuestions(mode);
+        maxQuestions = updateMaxQuestions(modeData);
         $('.topics_selector_container button').addClass('selected');
     });
     
