@@ -260,7 +260,7 @@ $(document).ready(function(){
 
     function updateExp(n) {
         if (userExp == null) {
-            setCookie('userExp', 0, 365);
+            setCookie('userExp', 1, 365);
         }
         else {
             setCookie("userExp", n, 365);
