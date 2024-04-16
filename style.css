@@ -5,6 +5,10 @@ body {
     margin: 0;
 }
 
+main {
+    margin-bottom: 50px;
+}
+
 h1 {
     margin: 10px 10px 10px 10px;
     font-size: 20;
@@ -20,6 +24,7 @@ h2 {
 p {
     margin: 10px 10px 10px 10px
 }
+
 header {
     background-color: cornflowerblue;
     padding: 20px 0px 20px 0px;
@@ -38,7 +43,7 @@ header {
     margin-left: 10px;
 }
 
-#header_logo_button {
+#header_home_button {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -93,7 +98,6 @@ button {
     padding: 20px 20px 20px 20px;
     background-color: white;
     border-radius: 20px;
-    margin-bottom: 50px;
     margin-top: 10px;
     display: inline-block;
 }
@@ -121,6 +125,7 @@ button {
     padding: 20px 20px 20px 20px;
     background-color: white;
     margin-bottom: 10px;
+    margin-top: 10px;
     border-radius: 20px;
     display: inline-block;
 }
@@ -291,6 +296,8 @@ button {
     background-color: white;
     border-radius: 20px;
     justify-content: center;
+    display: flex;
+    align-items: center;
 }
 
 #mcqs_answers {
@@ -317,7 +324,6 @@ button {
 #graphing {
     padding: 20px 20px 20px 20px;
 }
-
 
 #prev_graphing, #next_graphing {
     height: 550px;
@@ -354,6 +360,10 @@ button {
     background-color: white;
     border-radius: 20px;
     justify-content: center;
+}
+
+#settings {
+    padding: 20px 20px 20px 20px;
 }
 
 footer {

@@ -251,13 +251,24 @@ $(document).ready(function(){
 
     function updateExp(n) {
         if (userExp == null) {
-            setCookie('userExp', 1, 365);
+            setCookie('userExp', 0, 365);
         }
         else {
             setCookie("userExp", n, 365);
         }
-        userExp = getCookie("userExp")
-        $("#level_button").text("Experience: " + userExp);
+        userExp = getCookie("userExp");
+
+        exp = userExp;
+        lvl = 0;
+        lvlLen = 10;
+
+        while (exp - lvlLen > 0) {
+            exp = exp - lvlLen;
+            lvl++;
+            lvlLen += 10;
+        }
+        console.log(exp);
+        $("#level_button").text("Level " + lvl + ": " + exp + "/" + lvlLen);
         return userExp;
     }
 
@@ -872,6 +883,8 @@ $(document).ready(function(){
             incrementExp(numberOfQuestions * 5 - incorrectCount - 3);
             var finishedHTML = `Finished! (${correctPercentage.toFixed(2)}% correct (${incorrectCount} incorrect). You earned ${numberOfQuestions * 5 - incorrectCount - 3} experience!`;
             $(".mode_finished_left_div p").text(finishedHTML);
+
+            incrementExp(numberOfQuestions * 5 - incorrectCount - 3);
     
         }
     }
@@ -909,7 +922,7 @@ $(document).ready(function(){
         graphingResponses = new Array(numberOfQuestions).fill(null);
 
         updateGraphingContentHeading(currentIndex, numberOfQuestions);
-            displayGraphing(currentIndex);
+        displayGraphing(currentIndex);
     });
 
 
