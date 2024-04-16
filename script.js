@@ -262,7 +262,7 @@ $(document).ready(function(){
         lvl = 0;
         lvlLen = 10;
 
-        while (exp - lvlLen > 0) {
+        while (exp >= lvlLen) {
             exp = exp - lvlLen;
             lvl++;
             lvlLen += 10;
