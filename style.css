@@ -309,7 +309,7 @@ button {
     height: 100px;
 }
 
-#mcqs_not_done_popup, #graphing_not_done_popup {
+#mcqs_not_done_popup, #graphing_not_done_popup, #levelling_popup {
     display: none;
     position: fixed;
     top: 50%;

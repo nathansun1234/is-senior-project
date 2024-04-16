@@ -160,6 +160,15 @@ $(document).ready(function(){
         }
     }
 
+    $("#level_button").click(function(){
+        var popup = document.getElementById("levelling_popup");
+            popup.style.display = "block";
+            
+            setTimeout(function() {
+                popup.style.display = "none";
+            }, 4000);
+    })
+
     $("#last_practiced_button").click(function(){
         if (modeIndex == 1) {
             $("main").show();
