@@ -965,7 +965,7 @@ $(document).ready(function(){
           ],
           "all": [
             {"term": "Figure", "definition": "Something that can be transformed, like a shape, line, or point. When transforming a figure, apply the transformation to each component of the figure"},
-            {"term": "Prime (A -> A’)", "definition": "Symbol that means the image (result) of a transformation"},
+            {"term": "Prime (A -> A')", "definition": "Symbol that means the image (result) of a transformation"},
             {"term": "Preimage", "definition": "The original figure before the transformation"},
             {"term": "Image", "definition": "The transformed figure after the transformation"},
             {"term": "T/F Order matters when doing multiple transformations in a row", "definition": "True"}
@@ -1122,71 +1122,71 @@ $(document).ready(function(){
                 {
                     "question": "A point somewhere to the left of the origin is reflected over the x axis. What do we know for sure about the image of the transformation?",
                     "answers": [
-                        "It’s somewhere to the left of the origin", 
-                        "It’s somewhere to the right of the origin", 
-                        "It’s somewhere above the origin", 
-                        "It’s somewhere below the origin"
+                        "It's somewhere to the left of the origin", 
+                        "It's somewhere to the right of the origin", 
+                        "It's somewhere above the origin", 
+                        "It's somewhere below the origin"
                     ]
                 },
                 {
                     "question": "A point somewhere to the right of the origin is reflected over the x axis. What do we know for sure about the image of the transformation?",
                     "answers": [
-                        "It’s somewhere to the right of the origin", 
-                        "It’s somewhere to the left of the origin", 
-                        "It’s somewhere above the origin", 
-                        "It’s somewhere below the origin"
+                        "It's somewhere to the right of the origin", 
+                        "It's somewhere to the left of the origin", 
+                        "It's somewhere above the origin", 
+                        "It's somewhere below the origin"
                     ]
                 },
                 {
                     "question": "A point somewhere above the origin is reflected over the x axis. What do we know for sure about the image of the transformation?",
                     "answers": [
-                        "It’s somewhere below the origin", 
-                        "It’s somewhere above the origin", 
-                        "It’s somewhere to the right of the origin", 
-                        "It’s somewhere to the left of the origin"
+                        "It's somewhere below the origin", 
+                        "It's somewhere above the origin", 
+                        "It's somewhere to the right of the origin", 
+                        "It's somewhere to the left of the origin"
                     ]
                 },
                 {
                     "question": "A point somewhere below the origin is reflected over the x axis. What do we know for sure about the image of the transformation?",
                     "answers": [
-                        "It’s somewhere above the origin", 
-                        "It’s somewhere below the origin", 
-                        "It’s somewhere to the right of the origin", 
-                        "It’s somewhere to the left of the origin"
+                        "It's somewhere above the origin", 
+                        "It's somewhere below the origin", 
+                        "It's somewhere to the right of the origin", 
+                        "It's somewhere to the left of the origin"
                     ]
                 },
                 {
                     "question": "A point somewhere to the left of the origin is reflected over the y axis. What do we know for sure about the image of the transformation?",
                     "answers": [
-                        "It’s somewhere to the right of the origin", 
-                        "It’s somewhere to the left of the origin", 
-                        "It’s somewhere above the origin", 
-                        "It’s somewhere below the origin"
+                        "It's somewhere to the right of the origin", 
+                        "It's somewhere to the left of the origin", 
+                        "It's somewhere above the origin", 
+                        "It's somewhere below the origin"
                     ]
                 },
                 {
                     "question": "A point somewhere to the right of the origin is reflected over the y axis. What do we know for sure about the image of the transformation?",
                     "answers": [
-                        "It’s somewhere to the left of the origin", 
-                        "It’s somewhere to the right of the origin", 
-                        "It’s somewhere above the origin", 
-                        "It’s somewhere below the origin"]
+                        "It's somewhere to the left of the origin", 
+                        "It's somewhere to the right of the origin", 
+                        "It's somewhere above the origin", 
+                        "It's somewhere below the origin"]
                 },
                 {
                     "question": "A point somewhere above the origin is reflected over the y axis. What do we know for sure about the image of the transformation?",
                     "answers": [
-                        "It’s somewhere above the origin", 
-                        "It’s somewhere below the origin", 
-                        "It’s somewhere to the left of the origin", 
-                        "It’s somewhere to the right of the origin"]
+                        "It's somewhere above the origin", 
+                        "It's somewhere below the origin", 
+                        "It's somewhere to the left of the origin", 
+                        "It's somewhere to the right of the origin"]
                 },
                 {
                     "question": "A point somewhere below the origin is reflected over the y axis. What do we know for sure about the image of the transformation?",
                     "answers": [
-                        "It’s somewhere below the origin", 
-                        "It’s somewhere above the origin", 
-                        "It’s somewhere to the left of the origin", 
-                        "It’s somewhere to the right of the origin"
+                        "It's somewhere below the origin", 
+                        "It's somewhere above the origin", 
+                        "It's somewhere to the left of the origin", 
+                        "It's somewhere to the right of the origin"
                     ]
                 },
                 {
@@ -2100,7 +2100,7 @@ $(document).ready(function(){
                     ]
                 },
                 {
-                    "question": "Which of the following combinations of transformations doesn’t maintain the congruency of the figure?",
+                    "question": "Which of the following combinations of transformations doesn't maintain the congruency of the figure?",
                     "answers": [
                         "A dilation and then a rotation",
                         "A rotation then a translation",
@@ -2109,7 +2109,7 @@ $(document).ready(function(){
                     ]
                 },
                 {
-                    "question": "Which of the following combinations of transformations doesn’t maintain the congruency of the figure?",
+                    "question": "Which of the following combinations of transformations doesn't maintain the congruency of the figure?",
                     "answers": [
                         "A translation then a dilation",
                         "A reflection then a rotation",
@@ -2117,7 +2117,7 @@ $(document).ready(function(){
                     ]
                 },
                 {
-                    "question": "Which of the following combinations of transformations doesn’t maintain the congruency of the figure?",
+                    "question": "Which of the following combinations of transformations doesn't maintain the congruency of the figure?",
                     "answers": [
                         "A dilation then a reflection",
                         "A rotation then a translation",
@@ -2126,7 +2126,7 @@ $(document).ready(function(){
                     ]
                 },
                 {
-                    "question": "Which of the following combinations of transformations doesn’t maintain the congruency of the figure?",
+                    "question": "Which of the following combinations of transformations doesn't maintain the congruency of the figure?",
                     "answers": [
                         "A rotation then a dilation",
                         "A rotation then a translation",
