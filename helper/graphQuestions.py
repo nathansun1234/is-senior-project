@@ -5,7 +5,7 @@ temp = []
 for x in range(-8, 9):
     for y in range(-8, 9):
         temp.append("\t\t{\"question\": \"What is the reflection across the x axis?\", \"preimage\": [%d, %d], \"image\": [%d, %d]}, \n" % (x, y, x, -y))
-        temp.append("\t\t{\"question\": \"What is the reflection across the y axis?\", \"preimage\": [%d, %d], \"image\": [%d, %d]}, \n" % (x, y, x, -y))
+        temp.append("\t\t{\"question\": \"What is the reflection across the y axis?\", \"preimage\": [%d, %d], \"image\": [%d, %d]}, \n" % (x, y, -x, y))
 np.random.shuffle(temp)
 temp = temp[:100]
 for i in temp:
