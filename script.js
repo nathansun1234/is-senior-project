@@ -84,8 +84,9 @@ $(document).ready(function(){
     $("#header_settings_button").click(function(){
         $("main").show();
         $("#home").hide();
-        $("#flashcards").hide()
+        $("#flashcards").hide();
         $("#graphing").hide();
+        $("#mcqs").hide();
         $("#settings").show();
     });
 
@@ -225,10 +226,17 @@ $(document).ready(function(){
         }
 
         else {
-            $('#last_practiced_button').css('background-color', 'red');
-            setTimeout(function() {
-                $('#last_practiced_button').css('background-color', '');
-            }, 500);
+            $('#last_practiced_button').css('background-color', 'crimson');
+            if (currentDark == 1) {
+                setTimeout(function() {
+                    $('#last_practiced_button').css('background-color', '');
+                }, 500);
+            }
+            else {
+                setTimeout(function() {
+                    $('#last_practiced_button').css('background-color', 'rgb(60, 60, 60)');
+                }, 500);
+            }
         }
     });
 
@@ -280,6 +288,7 @@ $(document).ready(function(){
             lvl++;
             lvlLen += 10;
         }
+
         console.log(exp);
         $("#level_button").text("Level " + lvl + ": " + exp + "/" + lvlLen);
         return userExp;
@@ -313,13 +322,23 @@ $(document).ready(function(){
     function toggleTopicSelection(topic) {
         if (selectedTopics.includes(topic)) {
             $(`.select_${topic}`).removeClass('selected');
+
+            if (currentDark == 0) {
+                $(`.select_${topic}`).css('background-color', 'rgb(60, 60, 60)');
+            }
+            else {
+                $(`.select_${topic}`).css('background-color', 'rgb(235, 235, 235)');
+            }
+            
             selectedTopics = selectedTopics.filter(function(item) {
                 return item !== topic;
             });
             console.log("updated selected topics: " + selectedTopics);
         }
+
         else {
             $(`.select_${topic}`).addClass('selected');
+            $(`.select_${topic}`).css('background-color', 'rgb(70,130,180)');
             selectedTopics.push(topic);
             console.log("updated selected topics: " + selectedTopics);
         }
@@ -327,6 +346,7 @@ $(document).ready(function(){
 
     function updateMaxQuestions(dataset, modeData) {
         var result = 0;
+
         selectedTopics.forEach(topic => {
             result += dataset.topics[topic].length;
         });
@@ -390,6 +410,7 @@ $(document).ready(function(){
         selectedTopics.push('congruency');
         maxQuestions = updateMaxQuestions(modeData);
         $('.topics_selector_container button').addClass('selected');
+        $(`.topics_selector_container button`).css('background-color', 'rgb(70,130,180)');
     });
     
     //----------FLASHCARDS----------
@@ -434,9 +455,17 @@ $(document).ready(function(){
         
         if (incorrectQuestions.includes(finalFlashcards[currentIndex]) && !$("#mark_unknown").hasClass("selected")) {
             $(`#mark_unknown`).addClass('selected');
+            $(`#mark_unknown}`).css('background-color', 'rgb(0, 113, 197)');
         }
         else if (!incorrectQuestions.includes(finalFlashcards[currentIndex]) && $("#mark_unknown").hasClass("selected")) {
             $(`#mark_unknown`).removeClass('selected');
+
+            if (currentDark == 0) {
+                $(`#mark_unknown`).css('background-color', 'rgb(60, 60, 60)');
+            }
+            else {
+                $(`#mark_unknown`).css('background-color', 'rgb(235, 235, 235)');
+            }
         }
     }
 
@@ -480,6 +509,7 @@ $(document).ready(function(){
             updateFlashcardsContentHeading(currentIndex, numberOfQuestions)
             displayFlashcard(currentIndex);
         }
+
         else {
             displayFlashcardsComplete();
         }
@@ -488,6 +518,14 @@ $(document).ready(function(){
     $('#mark_unknown').click(function() {
         if (incorrectQuestions.includes(finalFlashcards[currentIndex])) {
             $(`#mark_unknown`).removeClass('selected');
+
+            if (currentDark == 0) {
+                $(`#mark_unknown`).css('background-color', 'rgb(60, 60, 60)');
+            }
+            else {
+                $(`#mark_unknown`).css('background-color', 'rgb(235, 235, 235)');
+            }
+
             incorrectQuestions = incorrectQuestions.filter(function(item) {
                 return item !== finalFlashcards[currentIndex];
             });
@@ -497,6 +535,7 @@ $(document).ready(function(){
         
         else {
             $(`#mark_unknown`).addClass('selected');
+            $(`#mark_unknown`).css('background-color', 'rgb(0, 113, 197)');
             incorrectQuestions.push(finalFlashcards[currentIndex]);
             console.log("updated unknown flashcards: " + incorrectQuestions);
         }
@@ -516,10 +555,23 @@ $(document).ready(function(){
             displayFlashcard(currentIndex);
         }
         else {
-            $('#flashcards_review_unknown').css('background-color', 'red');
-            setTimeout(function() {
-                $('#flashcards_review_unknown').css('background-color', '');
-            }, 500);
+            $('#flashcards_review_unknown').css('background-color', 'crimson');
+            $('#flashcards_review_unknown').html('Nothing marked unknown!');
+
+            if (currentDark == 1) {
+                setTimeout(function() {
+                    $('#flashcards_review_unknown').css('background-color', '');
+                    $('#flashcards_review_unknown').html('New Flashcards with Unknown');
+                }, 500);
+            }   
+
+            else {
+                setTimeout(function() {
+                    $('#flashcards_review_unknown').css('background-color', 'rgb(60, 60, 60)');
+                    $('#flashcards_review_unknown').html('New Flashcards with Unknown');
+                }, 500);
+                
+            }
         }
     });
 
@@ -533,7 +585,6 @@ $(document).ready(function(){
         updateFlashcardsContentHeading(currentIndex, numberOfQuestions);
         displayFlashcard(currentIndex);
     });
-
 
     $('#flashcards_complete_home').click(function() {
         $("#flashcards_landing").show();
@@ -576,13 +627,25 @@ $(document).ready(function(){
             updateMcqsContentHeading(currentIndex, numberOfQuestions);
             displayMcq(currentIndex);
         }
-        else {
-            $('#mcqs_start').css('background-color', 'red');
-            setTimeout(function() {
-                $('#mcqs_start').css('background-color', '');
-            }, 500);
-        }
 
+        else {
+            $('#mcqs_start').css('background-color', 'crimson');
+            $('#mcqs_start').html('Select topic(s) or increase number of questions!');
+
+            if (currentDark == 1) {
+                setTimeout(function() {
+                    $('#mcqs_start').css('background-color', '');
+                    $('#mcqs_start').html('Start!');
+                }, 500);
+            }
+
+            else {
+                setTimeout(function() {
+                    $('#mcqs_start').css('background-color', 'rgb(60, 60, 60)');
+                    $('#mcqs_start').html('Start!');
+                }, 500);
+            }
+        }
     });
 
     function updateMcqsContentHeading(index, total) {
@@ -597,7 +660,6 @@ $(document).ready(function(){
 
         $('#mcqs_question p').text(finalMcqs[index].question);
 
-        
         var answerButtons = $('#mcqs_answers button');
 
         answerButtons.each(function(i) {
@@ -607,10 +669,18 @@ $(document).ready(function(){
 
         answerButtons.removeClass('selected');
 
+        if (currentDark == 0) {
+            $(answerButtons).css('background-color', 'rgb(60, 60, 60)');
+        }
+        else {
+            $(answerButtons).css('background-color', 'rgb(235, 235, 235)');
+        }
+
         if (selectedMCQChoices[index] !== null) {
             answerButtons.each(function(i) {
                 if ($(this).text() == selectedMCQChoices[index]) {
                     $(this).addClass("selected");
+                    $(this).css('background-color', 'rgb(70,130,180)');
                 }
             });
         }
@@ -619,10 +689,30 @@ $(document).ready(function(){
     $('#mcqs_answers button').click(function() {
         if ($(this).hasClass("selected")) {
             $(this).removeClass("selected")
+
+            if (currentDark == 0) {
+                $(this).css('background-color', 'rgb(60, 60, 60)');
+            }
+            else {
+                $(this).css('background-color', 'rgb(235, 235, 235)');
+            }
+
             selectedMCQChoices[currentIndex] = null;
         }
         else {
             $(this).addClass('selected').siblings().removeClass('selected');
+            $(this).css('background-color', 'rgb(70,130,180)');
+
+            if (currentDark == 0) {
+                $(this).siblings().css('background-color', 'rgb(60, 60, 60)');
+                $(this).parent().siblings().children('button').css('background-color', 'rgb(60, 60, 60)')
+            }
+
+            else {
+                $(this).siblings().css('background-color', 'rgb(235, 235, 235)');
+                $(this).parent().siblings().children('button').css('background-color', 'rgb(235, 235, 235)')
+            }
+
             $(this).parent().siblings().children('button').removeClass('selected');
 
             selectedMCQChoices[currentIndex] = $(this).text();
@@ -632,9 +722,11 @@ $(document).ready(function(){
 
     function shuffleArray(array) {
         var copy = [];
+
         for (var i = 0; i < array.length; i++) {
             copy[i] = array[i];
         }
+
         for (var i = copy.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [copy[i], copy[j]] = [copy[j], copy[i]];
@@ -658,6 +750,7 @@ $(document).ready(function(){
             updateMcqsContentHeading(currentIndex, numberOfQuestions)
             displayMcq(currentIndex);
         }
+
         else {
             displayMcqComplete()
         }
@@ -678,6 +771,7 @@ $(document).ready(function(){
                     incorrectQuestions.push(unscrambledFinalMcqs[i]);
                 }
             }
+
             console.log(selectedMCQChoices);
             console.log(unscrambledFinalMcqs);
             console.log(incorrectQuestions);
@@ -695,9 +789,11 @@ $(document).ready(function(){
             incrementExp(expGained);
 
             var finishedHTML;
+
             if (expGained > 0) {
                 finishedHTML = `Finished! (${correctPercentage.toFixed(2)}% correct (${incorrectCount} incorrect). You earned ${expGained} experience!`;
             }
+
             else {
                 finishedHTML = `Finished! (${correctPercentage.toFixed(2)}% correct (${incorrectCount} incorrect). You lost ${-expGained} experience.`;
             }
@@ -718,7 +814,8 @@ $(document).ready(function(){
 
             finalMcqs = unscrambledFinalMcqs.map(mcq => {
 
-                const shuffledAnswers = shuffleArray([...mcq.answers]); 
+                const shuffledAnswers = shuffleArray([...mcq.answers]);
+
                 return {
                     question: mcq.question,
                     answers: shuffledAnswers
@@ -730,11 +827,24 @@ $(document).ready(function(){
             displayMcq(currentIndex);
             
         }
+
         else {
-            $('#mcqs_review_unknown').css('background-color', 'red');
-            setTimeout(function() {
-                $('#mcqs_review_unknown').css('background-color', '');
-            }, 500);
+            $('#mcqs_review_unknown').css('background-color', 'crimson');
+            $('#mcqs_review_unknown').html('Nothing Incorrect!');
+
+            if (currentDark == 1) {
+                setTimeout(function() {
+                    $('#mcqs_review_unknown').css('background-color', '');
+                    $('#mcqs_review_unknown').html('New Multiple Choice with Incorrect');
+                }, 500);
+            }
+
+            else {
+                setTimeout(function() {
+                    $('#mcqs_review_unknown').css('background-color', 'rgb(60, 60, 60)');
+                    $('#mcqs_review_unknown').html('New Multiple Choice with Incorrect');
+                }, 500);
+            }
         }
     });
 
@@ -782,13 +892,27 @@ $(document).ready(function(){
             updateGraphingContentHeading(currentIndex, numberOfQuestions);
             displayGraphing(currentIndex);
         }
+
         else {
-            $('#graphing_start').css('background-color', 'red');
-            setTimeout(function() {
-                $('#graphing_start').css('background-color', '');
-            }, 500);
+            $('#graphing_start').css('background-color', 'crimson');
+            $('#graphing_start').html('Select topic(s) or increase number of questions!');
+
+            if (currentDark == 1) {
+                setTimeout(function() {
+                    $('#graphing_start').css('background-color', '');
+                    $('#graphing_start').html('Start!');
+                }, 500);
+            }
+
+            else {
+                setTimeout(function() {
+                    $('#graphing_start').css('background-color', 'rgb(60, 60, 60)');
+                    $('#graphing_start').html('Start!');
+                }, 500);
+            }
         }
     });
+
     function updateGraphingContentHeading(index, total) {
         $('#graphing_content_heading').html(`Graphing: ${index + 1}/${total}`);
     }
@@ -805,9 +929,10 @@ $(document).ready(function(){
             $('#graph_interface').find('.responsePoint').remove();
             $('#graph_interface').append(`<div class="responsePoint" style="position: absolute; left: ${relativeX + $('#graph_interface').offset().left}px; top: ${relativeY + $('#graph_interface').offset().top}px; width: 5px; height: 5px; background-color: blue; border-radius: 50%;"></div>`);
         }
+
         else {
             $('#graph_interface').find('.promptPoint').remove();
-            $('#graph_interface').append(`<div class="promptPoint" style="position: absolute; left: ${relativeX + $('#graph_interface').offset().left}px; top: ${relativeY + $('#graph_interface').offset().top}px; width: 5px; height: 5px; background-color: red; border-radius: 50%;"></div>`);
+            $('#graph_interface').append(`<div class="promptPoint" style="position: absolute; left: ${relativeX + $('#graph_interface').offset().left}px; top: ${relativeY + $('#graph_interface').offset().top}px; width: 5px; height: 5px; background-color: crimson; border-radius: 50%;"></div>`);
         }
     }
 
@@ -845,9 +970,11 @@ $(document).ready(function(){
         $('#graphing_question_text p').text(finalGraphingQuestions[index].question);
 
         drawPoint(finalGraphingQuestions[currentIndex].preimage[0], finalGraphingQuestions[currentIndex].preimage[1], false);
+
         if (graphingResponses[currentIndex] != null) {
             drawPoint(graphingResponses[currentIndex][0], graphingResponses[currentIndex][1], true);
         }
+
         else {
             $('#graph_interface').find('.responsePoint').remove();
         }
@@ -869,6 +996,7 @@ $(document).ready(function(){
             updateGraphingContentHeading(currentIndex, numberOfQuestions)
             displayGraphing(currentIndex);
         }
+
         else {
             displayGraphingComplete()
         }
@@ -883,12 +1011,14 @@ $(document).ready(function(){
                 popup.style.display = "none";
             }, 2000);
         }
+
         else {
             for (var i = 0; i < numberOfQuestions; i++) {
                 if (graphingResponses[i][0] != finalGraphingQuestions[i].image[0] || graphingResponses[i][1] != finalGraphingQuestions[i].image[1]) {
                     incorrectQuestions.push(finalGraphingQuestions[i]);
                 }
             }
+
             console.log(graphingResponses);
             console.log(finalGraphingQuestions);
             console.log(incorrectQuestions);
@@ -906,9 +1036,11 @@ $(document).ready(function(){
             incrementExp(expGained);
 
             var finishedHTML;
+
             if (expGained > 0) {
                 finishedHTML = `Finished! (${correctPercentage.toFixed(2)}% correct (${incorrectCount} incorrect). You earned ${expGained} experience!`;
             }
+
             else {
                 finishedHTML = `Finished! (${correctPercentage.toFixed(2)}% correct (${incorrectCount} incorrect). You lost ${-expGained} experience.`;
             }
@@ -933,11 +1065,24 @@ $(document).ready(function(){
             displayGraphing(currentIndex);
             
         }
+
         else {
-            $('#graphing_review_unknown').css('background-color', 'red');
-            setTimeout(function() {
-                $('#graphing_review_unknown').css('background-color', '');
-            }, 500);
+            $('#graphing_review_unknown').css('background-color', 'crimson');
+            $('#graphing_review_unknown').html('Nothing Incorrect!');
+
+            if (currentDark == 1) {
+                setTimeout(function() {
+                    $('#graphing_review_unknown').css('background-color', '');
+                    $('#graphing_review_unknown').html('New Graphing with Incorrect');
+                }, 500);
+            }
+
+            else {
+                setTimeout(function() {
+                    $('#graphing_review_unknown').css('background-color', 'rgb(60, 60, 60)');
+                    $('#graphing_review_unknown').html('New Graphing with Incorrect');
+                }, 500);
+            }
         }
     });
 
@@ -953,11 +1098,171 @@ $(document).ready(function(){
         displayGraphing(currentIndex);
     });
 
-
     $('#graphing_complete_home').click(function() {
         $("#graphing_landing").show();
         $("#graphing_complete").hide();
     });
+
+    //----------SETTINGS----------
+    let currentDark = 1; //null
+    //currentDark = getCookie("darkMode");
+    console.log(currentDark);
+
+    // if (currentDark == null) {
+    //     currentDark = 1; //0=dark, 1=light
+    //     setCookie("darkMode", currentDark, 365);
+    //     console.log(currentDark);
+    // }
+
+    toggleDarkMode(currentDark == 0);
+
+    function switchBackgroundColor(oldColor, newColor) {
+        var elementsToSwitch = $('body, body *').filter(function() {
+          var backgroundColor = $(this).css('background-color');
+          return backgroundColor === oldColor;
+        });
+        
+        elementsToSwitch.css('background-color', newColor);
+    }
+
+    function switchTextColor(oldColor, newColor) {
+        var elementsToSwitch = $('body, body *').filter(function() {
+          var textColor = $(this).css('color');
+          return textColor === oldColor;
+        });
+        
+        elementsToSwitch.css('color', newColor);
+      }
+
+    function toggleDarkMode(turnOn) {
+        if (turnOn) { //switch from light to dark
+            switchBackgroundColor("rgb(235, 235, 235)", "rgb(60, 60, 60)");
+            switchBackgroundColor("rgb(245, 245, 245)", "rgb(0, 0, 0)");
+            switchBackgroundColor("rgb(255, 255, 255)", "rgb(30, 30, 30)");
+            switchTextColor("rgb(0, 0, 0)", "rgb(255, 255, 255)");
+        }
+
+        else { //switch from dark to light
+            switchBackgroundColor("rgb(30, 30, 30)", "rgb(255, 255, 255)");
+            switchBackgroundColor("rgb(60, 60, 60)", "rgb(235, 235, 235)");
+            switchBackgroundColor("rgb(0, 0, 0)", "rgb(245, 245, 245)");
+            switchTextColor("rgb(255, 255, 255)", "rgb(0, 0, 0)");
+        }
+    }
+
+    $('#dark_mode_toggle').click(function() {
+        if (currentDark == 1) {
+            currentDark = 0;
+        }
+
+        else {
+            currentDark = 1;
+        }
+
+        toggleDarkMode(currentDark == 0);
+        
+        setTheme(currentTheme);
+
+        console.log(currentDark);
+        //setCookie("darkMode", currentDark, 365);
+    });
+
+    $("#color_change_submit").click(function() {
+        choice = parseInt($('#color_picker').val())
+        setTheme(choice);
+    });
+
+    function setTheme(choice) {
+        if (choice == 0) { //red
+            if (currentDark == 0) {
+                $("header, footer").css("background-color", "rgb(176, 58, 46)");
+            }
+            else {
+                $("header, footer").css("background-color", "rgb(236, 112, 99)");
+            }
+        }
+
+        else if (choice == 1) { //orange
+            if (currentDark == 0) {
+                $("header, footer").css("background-color", "rgb(211, 84, 0)");
+            }
+            else {
+                $("header, footer").css("background-color", "rgb(235, 152, 78)");
+            }
+        }
+
+        else if (choice == 2) { //yellow
+            if (currentDark == 0) {
+                $("header, footer").css("background-color", "rgb(241, 196, 15)");
+            }
+            else {
+                $("header, footer").css("background-color", "rgb(247, 220, 111)");
+            }
+        }
+
+        else if (choice == 3) { //green
+            if (currentDark == 0) {
+                $("header, footer").css("background-color", "rgb(30, 132, 73)");
+            }
+            else {
+                $("header, footer").css("background-color", "rgb(130, 224, 170)");
+            }
+        }
+
+        else if (choice == 4) { //turqouis
+            if (currentDark == 0) {
+                $("header, footer").css("background-color", "rgb(19, 141, 117)");
+            }
+            else {
+                $("header, footer").css("background-color", "rgb(118, 215, 196)");
+            }
+        }
+
+        else if (choice == 5) { //blue
+            if (currentDark == 0) {
+                $("header, footer").css("background-color", "rgb(31, 97, 141)");
+            }
+            else {
+                $("header, footer").css("background-color", "rgb(100, 149, 237)");
+            }
+        }
+
+        else if (choice == 6) { //purple
+            if (currentDark == 0) {
+                $("header, footer").css("background-color", "rgb(108, 52, 131)");
+            }
+            else {
+                $("header, footer").css("background-color", "rgb(187, 143, 206)");
+            }
+        }
+
+        else if (choice == 7) { //pink
+            if (currentDark == 0) {
+                $("header, footer").css("background-color", "rgb(213, 35, 132)");
+            }
+            else {
+                $("header, footer").css("background-color", "rgb(245, 210, 229)");
+            }
+        }
+
+        currentTheme = choice;
+        //setCookie("theme", currentTheme, 365);
+    }
+
+    let currentTheme = 5; //null
+
+    //currentTheme = getCookie("theme");
+
+    // if (currentTheme == null) {
+    //     currentTheme = 0;
+    //     setCookie("theme", currentTheme, 365);
+    //     console.log(currentTheme);
+    // }
+
+    setTheme(currentTheme);
+
+    
+
     //----------DATA----------
     let flashcardsData = {
         "topics": {
