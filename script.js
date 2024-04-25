@@ -1880,7 +1880,7 @@ $(document).ready(function(){
                 {
                     "question": "The preimage (-6, 1) is rotated 90 degrees clockwise. Where is the image of the transformation?",
                     "answers": [
-                        "(-6, 1)",
+                        "(6, 1)",
                         "(-1, 6)", 
                         "(6, -1)", 
                         "(1, -6)"
