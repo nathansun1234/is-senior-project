@@ -440,29 +440,36 @@ $(document).ready(function(){
     }
 
     function displayFlashcard(index) {
+        // asserts that we our index is within range
         if (finalFlashcards.length === 0 || index < 0 || index >= finalFlashcards.length) {
             console.error();
             return;
         }
 
+        // shows the front of the flashcard automatically
         if ($("#flashcard_front").is(":hidden")) {
             $('#flashcard_front, #flashcard_back').toggle();
         }
 
+        // sets the html text of both the front and back from our array of selected flashcards
         $('#flashcard_front p').text(finalFlashcards[index].term);
         $('#flashcard_back p').text(finalFlashcards[index].definition);
 
-        
+        // if we had previously marked the flashcard as unknown, we mark the button as selected
         if (incorrectQuestions.includes(finalFlashcards[currentIndex]) && !$("#mark_unknown").hasClass("selected")) {
             $(`#mark_unknown`).addClass('selected');
             $(`#mark_unknown}`).css('background-color', 'rgb(0, 113, 197)');
         }
+
+        // otherwise if it is not unknown, but we are navigating from an unknown flashcard, we mark it as unselected
         else if (!incorrectQuestions.includes(finalFlashcards[currentIndex]) && $("#mark_unknown").hasClass("selected")) {
             $(`#mark_unknown`).removeClass('selected');
 
+            // sets the color back to normal depending on whether or not we are in dark mode
             if (currentDark == 0) {
                 $(`#mark_unknown`).css('background-color', 'rgb(60, 60, 60)');
             }
+
             else {
                 $(`#mark_unknown`).css('background-color', 'rgb(235, 235, 235)');
             }
