@@ -2484,6 +2484,7 @@ $(document).ready(function(){
             "all": []
         }
     };
+    
     let graphingData = {
         "topics": {
         "reflections": [
